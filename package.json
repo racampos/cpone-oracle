@@ -1,0 +1,29 @@
+{
+  "name": "cpone-oracle",
+  "version": "0.1.0",
+  "description": "Oracle component for the CPoNE project. Retrieves data from Twitter and signs it to be consumed by the CPoNE zkApp.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "19.7.0"
+  },
+  "keywords": [
+    "zkapp",
+    "zkoracle",
+    "twitter",
+    "nft",
+    "endorsement",
+    "mina"
+  ],
+  "author": "Rafael Campos",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "snarkyjs": "^0.11.0"
+  }
+}
