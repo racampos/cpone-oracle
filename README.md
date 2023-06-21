@@ -62,25 +62,25 @@ This application can be easily deployed to Heroku:
 
 ## License
 
-Apache 2.0
+[Apache-2.0](LICENSE)
 
-# To Do
+## Future Work
 
-## Implementing a Two-Party Computation Scheme
+### Implementing a Two-Party Computation Scheme
 
 Our current system relies on retrieving data directly from Twitter. While this data is fetched over a secure TLS connection, both the client and server possess the encryption and signing keys for the TLS session. This means there's no cryptographic proof that the retrieved data has not been tampered with by the client.
 
 A potential enhancement to our system is to incorporate a Two-Party Computation (2PC) scheme, similar to what's used in protocols like TLSNotary and DECO. 
 
-### The TLSNotary Approach
+#### **The TLSNotary Approach**
 
 In the TLSNotary protocol, the TLS session keys are split between the user (client) and a notary (server). The user's requests are encrypted and authenticated using a secure 2PC protocol. At no point does either the user or the notary have access to the full TLS session keys. This way, it is possible to provide a proof of the authenticity of communication, while maintaining privacy and the security assumptions of TLS.
 
-### The DECO Approach
+#### **The DECO Approach**
 
 The DECO protocol addresses the technical challenges of designing a system that ensures security and practical performance, using legacy-(TLS)-compatible primitives. DECO introduces a three-party handshake protocol between the prover (client), verifier (server), and web server that creates an unforgeable commitment from the prover to the verifier on a piece of TLS session data. This provides a way for the verifier to check that the data is authentically from the TLS server, while preserving the security of TLS from the prover's perspective.
 
-### The Challenge
+#### **The Challenge**
 
 The challenge of implementing such a scheme in our oracle lies in designing a system that can:
 - generate an unforgeable commitment of the TLS session data,
